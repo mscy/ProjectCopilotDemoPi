@@ -122,7 +122,7 @@ The tools are here. The AI is here. The only missing piece is you.
 | Interface | USB-C (data + charge), rotary encoder, buttons |
 | Expansion | M5Stack-compatible Grove I2C port |
 | PCB | 85×56mm, 4-layer, Raspberry Pi mounting holes |
-| Components | 84 |
+| Components | 84 (dual-side SMT) |
 
 ---
 

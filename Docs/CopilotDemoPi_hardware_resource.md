@@ -328,7 +328,7 @@ USB-C 5V → BQ24072 (U3) → Battery / PM_VOut → TPS63001 (U4) → 3.3V
 | Via | 0.3mm drill / 0.6mm pad |
 | Corner radius | 3mm |
 | Mounting | 4× M2.5 (Raspberry Pi compatible) |
-| Components | Top side only |
+| Components | **Dual-side SMT** (Top: large ICs + connectors, Bottom: passives + small ICs) |
 | Speaker | External (JST 1.25mm connector) |
 | Antenna | External (IPEX connector) |
 
