@@ -57,7 +57,7 @@ AI processed 6 rounds of ERC reports, reducing errors from 97 to 7:
 - Identified ~80 off-grid warnings and suggested batch fix
 - Distinguished real errors from false positives (PWR_FLAG)
 
-*Each of these shorts would have cost a board respin (~¥200-500). AI caught all three before manufacturing.*
+*Each of these shorts would have cost a board respin (~$100-200). AI caught all three before manufacturing.*
 
 ### 5. Power Analysis
 AI estimated standby power consumption for the complete design, identified WS2812B static leakage (~1mA) as the dominant sleep current, and suggested adding 0Ω test resistors for PPK II power profiling.
