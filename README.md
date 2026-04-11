@@ -138,7 +138,7 @@ The tools are here. The AI is here. The only missing piece is you.
 
 ---
 
-*CopilotDemoPi — Designed by Yan Cui & Chac 🐕*
+*CopilotDemoPi — Designed by Cysoft & Chac 🐕*
 *Built with GitHub Copilot, KiCad, ESP-IDF, and a lot of good questions.*
 *April 2026*
 
