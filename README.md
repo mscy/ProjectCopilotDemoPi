@@ -2,6 +2,8 @@
 
 ### *What happens when a hardware engineer and an AI design a product together?*
 
+![CopilotDemoPi Concept Sketch](Hardware/CopilotDemoPi_concept_sketch.png)
+
 ---
 
 ## The Story
