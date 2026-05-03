@@ -1,5 +1,8 @@
 # CopilotDemoPi — Firmware Feature Summary
 
+![CopilotDemoPi Firmware](firmware_banner.jpg)
+
+
 A self-contained sample firmware for the CopilotDemoPi board
 (ESP32-S3-PICO-1-N8R8, 8 MB flash + 8 MB octal PSRAM). The image showcases
 every on-board peripheral through a tabbed UI on the 240×240 ST7789 LCD,
