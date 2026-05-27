@@ -1,5 +1,7 @@
 # Start Here
 
+![CopilotDemoPi Concept Sketch](../Hardware/CopilotDemoPi_concept_sketch.png)
+
 Welcome to **CopilotDemoPi** — a smart Bluetooth speaker with environmental monitoring, built on ESP32-S3 in a Raspberry Pi form factor. This guide will help you get oriented and start contributing.
 
 ---
