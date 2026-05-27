@@ -42,46 +42,127 @@ CopilotDemoPi/
 
 ---
 
-## Firmware Quick Start
+## Build, Flash & Run with VS Code
 
-### 1. Clone the repo
+This section walks you through the complete workflow — from cloning the repo to seeing output on the board — using **Visual Studio Code** with the **ESP-IDF extension**.
+
+> **First time?** Follow the [Environment Setup Guide](ENVIRONMENT_SETUP.md) to install VS Code and the ESP-IDF toolchain before continuing.
+
+### Step 1 — Clone the repo
 
 ```bash
 git clone https://github.com/mscy/ProjectCopilotDemoPi.git
+```
+
+### Step 2 — Open the firmware project in VS Code
+
+Open the `democode/` folder (not the repo root) as your workspace:
+
+```bash
 cd ProjectCopilotDemoPi
+code democode
 ```
 
-### 2. Set up ESP-IDF
+Or in VS Code: **File → Open Folder…** → select the `democode/` directory.
 
-Follow the [official installation guide](https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/get-started/index.html) for your OS, then activate the environment:
+> **Why `democode/`?** This folder contains the ESP-IDF project root (`CMakeLists.txt`, `main/`, `sdkconfig`, etc.). The ESP-IDF extension needs to be at the project root to work correctly.
 
-```bash
-. $HOME/esp/esp-idf/export.sh
-```
+### Step 3 — Select the target chip
 
-### 3. Configure the target
+1. Open the Command Palette: `Ctrl+Shift+P` (Windows/Linux) or `Cmd+Shift+P` (macOS)
+2. Run: **ESP-IDF: Set Espressif Device Target**
+3. Select **esp32s3**
 
-```bash
-idf.py set-target esp32s3
-```
+### Step 4 — Build the firmware
 
-### 4. Build
+**Option A — Click the build icon:**
+
+Look at the bottom status bar in VS Code. Click the **🔨 Build** button (provided by the ESP-IDF extension).
+
+**Option B — Use the Command Palette:**
+
+1. Open the Command Palette (`Ctrl+Shift+P` / `Cmd+Shift+P`)
+2. Run: **ESP-IDF: Build your Project**
+
+**Option C — Use the integrated terminal:**
 
 ```bash
 idf.py build
 ```
 
-### 5. Flash
+> The first build may take several minutes. Subsequent builds are incremental and much faster.
 
-Connect the board via USB-C, then:
+### Step 5 — Connect the board
+
+1. Connect the CopilotDemoPi board to your computer via a **USB-C data cable**
+2. The ESP-IDF extension should auto-detect the serial port
+3. If not, click the **port selector** in the bottom status bar and choose the correct port:
+   - macOS: `/dev/cu.usbmodem*`
+   - Linux: `/dev/ttyACM0` or `/dev/ttyUSB0`
+   - Windows: `COM3`, `COM4`, etc.
+
+### Step 6 — Flash the firmware
+
+**Option A — Click the flash icon:**
+
+Click the **⚡ Flash** button in the bottom status bar.
+
+**Option B — Use the Command Palette:**
+
+Run: **ESP-IDF: Flash your Project**
+
+**Option C — Terminal:**
 
 ```bash
-idf.py -p /dev/ttyUSB0 flash monitor
+idf.py -p /dev/cu.usbmodem101 flash
 ```
 
-> Replace `/dev/ttyUSB0` with your actual serial port (e.g., `/dev/ttyACM0` on Linux, `/dev/cu.usbmodem*` on macOS, `COM3` on Windows).
+> If flashing fails with "No serial data received", enter download mode manually: hold **BOOT**, press **RESET**, release **BOOT**.
 
-For flashing the pre-built binary without building, see [`Firmware/FLASHING.md`](../Firmware/FLASHING.md).
+### Step 7 — Monitor serial output
+
+**Option A — Click the monitor icon:**
+
+Click the **📺 Monitor** button in the bottom status bar.
+
+**Option B — One-click build + flash + monitor:**
+
+Click the **🔥** (flame) button to build, flash, and open the serial monitor in one step.
+
+**Option C — Terminal:**
+
+```bash
+idf.py -p /dev/cu.usbmodem101 monitor
+```
+
+Press `Ctrl+]` to exit the monitor.
+
+### Expected Output
+
+After flashing, the board reboots and you should see:
+
+```
+I (xxx) demopi: CopilotDemoPi — fw vX.X
+I (xxx) demopi: ESP32-S3, 2 cores, rev X
+I (xxx) lcd: ST7789 initialized (240x240)
+I (xxx) bme690: sensor ready
+...
+```
+
+The LCD will display the boot logo, LEDs will cycle through R/G/B, and the board enters the main UI.
+
+### Quick Reference — VS Code Status Bar
+
+| Button | Action | Shortcut |
+|--------|--------|----------|
+| 🔨 | Build | `Ctrl+E B` |
+| ⚡ | Flash | `Ctrl+E F` |
+| 📺 | Monitor | `Ctrl+E M` |
+| 🔥 | Build + Flash + Monitor | `Ctrl+E D` |
+| 🔌 | Select serial port | — |
+| 🎯 | Select target (esp32s3) | — |
+
+> For flashing a pre-built binary without building from source, see [`Firmware/FLASHING.md`](../Firmware/FLASHING.md).
 
 ---
 
