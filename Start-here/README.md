@@ -10,6 +10,7 @@ Welcome to **CopilotDemoPi** — a smart Bluetooth speaker with environmental mo
 
 ```
 CopilotDemoPi/
+├── democode/           ESP-IDF firmware source code (build this!)
 ├── Firmware/           Firmware specs, flashing guide, and pre-built binary
 │   ├── AGENTS.md       Coding rules for firmware development (read this first!)
 │   ├── FLASHING.md     How to flash the pre-built binary
@@ -22,7 +23,7 @@ CopilotDemoPi/
 │   ├── CopilotDemoPi_ERC_fix_log.md         ERC debugging record
 │   └── ai_hardware_design_journal.md        AI-assisted design story
 ├── Hardware/           PCB photos, schematics (PDF), and logo assets
-├── start-here/         You are here!
+├── Start-here/         You are here!
 └── README.md           Project overview and technical specs
 ```
 
