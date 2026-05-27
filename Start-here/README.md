@@ -126,7 +126,7 @@ All firmware code must follow the rules in [`AGENTS.md`](../Firmware/AGENTS.md).
 ## FAQ
 
 **Q: Do I need the physical board to contribute?**
-A: Not necessarily. You can write and build firmware code without hardware. For testing, you'll need the board or an ESP32-S3 dev kit with similar peripherals.
+A: Yes. This project is a showcase of how to design hardware products together with AI — from chip selection and schematic review to PCB layout and ERC debugging. Having the physical board lets you validate the full design cycle end-to-end.
 
 **Q: Can I use Arduino or PlatformIO?**
 A: No. This project uses ESP-IDF exclusively. See [AGENTS.md](../Firmware/AGENTS.md) for details.
