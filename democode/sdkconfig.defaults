@@ -1,0 +1,46 @@
+# =============================================================
+# CopilotDemoPi default sdkconfig
+# Target: ESP32-S3-PICO-1-N8R8 (8 MB flash, 8 MB octal PSRAM)
+# =============================================================
+
+CONFIG_IDF_TARGET="esp32s3"
+
+# --- Flash ---
+CONFIG_ESPTOOLPY_FLASHSIZE_8MB=y
+CONFIG_ESPTOOLPY_FLASHFREQ_80M=y
+CONFIG_ESPTOOLPY_FLASHMODE_QIO=y
+
+# --- PSRAM (octal, N8R8) ---
+CONFIG_ESP32S3_SPIRAM_SUPPORT=y
+CONFIG_SPIRAM=y
+CONFIG_SPIRAM_MODE_OCT=y
+CONFIG_SPIRAM_SPEED_80M=y
+CONFIG_SPIRAM_USE_MALLOC=y
+CONFIG_SPIRAM_TRY_ALLOCATE_WIFI_LWIP=y
+
+# --- CPU ---
+CONFIG_ESP_DEFAULT_CPU_FREQ_MHZ_240=y
+
+# --- Partition table ---
+CONFIG_PARTITION_TABLE_CUSTOM=y
+CONFIG_PARTITION_TABLE_CUSTOM_FILENAME="partitions.csv"
+
+# --- FreeRTOS ---
+CONFIG_FREERTOS_HZ=1000
+
+# --- Bluetooth disabled ---
+CONFIG_BT_ENABLED=n
+CONFIG_BT_BLUEDROID_ENABLED=n
+CONFIG_BT_CLASSIC_ENABLED=n
+CONFIG_BT_A2DP_ENABLE=n
+
+# --- Logging ---
+CONFIG_LOG_DEFAULT_LEVEL_INFO=y
+CONFIG_LOG_COLORS=y
+
+# --- Misc ---
+CONFIG_COMPILER_OPTIMIZATION_PERF=y
+CONFIG_ESP_TASK_WDT_TIMEOUT_S=10
+
+# --- Brownout: disable (USB transient dips during audio peaks were tripping it) ---
+CONFIG_ESP_BROWNOUT_DET=n
